@@ -8,7 +8,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/musiur/blog',
   footer: {
-    text: '@musiur',
+    text: 'musiur@withNextra',
   },
 }
 

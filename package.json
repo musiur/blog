@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
+  "name": "musiur-blog",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "musiur-blog",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
