@@ -1,0 +1,100 @@
+# Custom SVG icon in react
+
+If you have SVG icon and you need to use in React Projects then this guide may help you I hope.
+
+### Get SVG Icon
+Let's have a SVG file exported from figma or somewhere else in our project directory like this.
+
+```js filename="heart-icon.svg" copy
+<svg
+  width="22"
+  height="18"
+  viewBox="0 0 22 18"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M13 5C12.4673 4.39156 11.8649 3.69897 11 3.03884M11 3.03884C17.9491 -2.71789 24.3636 4.95775 19.0182 10.7145C18.1665 11.6317 15.2764 14.5523 12.6036 16.4712C11.5345 17.2388 10.2873 17.1109 9.39636 16.4712C7.79273 15.3518 3.75616 11.5484 2.98183 10.7145C-2.36361 4.95775 4.05092 -2.71789 11 3.03884Z"
+    stroke="#A5E71A"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
+```
+
+### Make React Component
+At first we need to make some changes with this file and rename the file as react component e.g. heart.tsx or, heart.jsx or, heart.ts or, heart.js. After that we need to make the component like this:
+
+```tsx filename="heart.tsx"  {2,8,12-14} copy
+const Heart = ({ size }: { size: string }) => {
+  const styles = `stroke-inherit hover:stroke-inherit dark:stroke-inherit dark:hover:stroke-inherit ${size}`;
+  return (
+    <svg
+      viewBox="0 0 22 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles}
+    >
+      <path
+        d="M13 5C12.4673 4.39156 11.8649 3.69897 11 3.03884M11 3.03884C17.9491 -2.71789 24.3636 4.95775 19.0182 10.7145C18.1665 11.6317 15.2764 14.5523 12.6036 16.4712C11.5345 17.2388 10.2873 17.1109 9.39636 16.4712C7.79273 15.3518 3.75616 11.5484 2.98183 10.7145C-2.36361 4.95775 4.05092 -2.71789 11 3.03884Z"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export default Heart;
+```
+
+As you can see above that svg stroke color in being inherited from parent element. So let's see how to use this component in our pages or along with other components
+
+### Using ICON Component
+Here, let's import this component in any other tsx, jsx, js, ts file. In our case let's have we are going to import this file into footer.tsx
+
+```tsx filename="footer.tsx" {1,6} copy
+import Heart from "@/components/icons/heart";
+
+const Footer = () => {
+  return (
+    <footer>
+      <Heart />
+    </footer>
+  );
+};
+
+export default Footer;
+```
+
+Then add parent element wrapping our Icon component and other neccessary elements.
+
+```tsx filename="footer.tsx" {1,4,7-11} copy
+import Heart from "@/components/icons/heart";
+
+const Footer = () => {
+  const supportPopStyles = `hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md py-1 px-3 inline-block cursor-pointer text-gray-400 hover:text-pink-400 dark:text-gray-400 dark:hover:text-pink-300 stroke-gray-400 hover:stroke-pink-400 dark:stroke-gray-400 dark:hover:stroke-pink-300`;
+  return (
+    <footer>
+      <div className={supportPopStyles}>
+        <p className="flex items-center gap-[3px]">
+          <Love size="w-4 h-4" /> Support
+        </p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+```
+
+
+# Component
+<br />
+<br />
+
+import Footer from "../../components/others/footer.tsx"
+
+<Footer />
+

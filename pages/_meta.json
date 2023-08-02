@@ -1,0 +1,14 @@
+{
+  "index": "Welcome",
+  "svg": "All About SVGs",
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://musiur.vercel.app",
+    "newWindow": true
+  }
+}
