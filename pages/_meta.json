@@ -1,6 +1,7 @@
 {
   "index": "Welcome",
   "svg": "All About SVGs",
+  "i18n": "Internationalization",
   "about": {
     "title": "About",
     "type": "page"
